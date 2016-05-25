@@ -25,7 +25,7 @@
 				if (text.startsWith("gifme")) {
 					var gifnum = parseInt(text.split(" ")[1], 10);
 					if (gifnum) {
-						bot.postMessageToChannel('catgifs', 'http://www.catgifpage.com/gifs/' + gifnum + '.gif');
+						bot.postMessageToChannel(message.channel, 'http://www.catgifpage.com/gifs/' + gifnum + '.gif');
 					}
 				}
 			}
