@@ -1,4 +1,5 @@
 (function() {
+	"use strict";
 	var Bot = require('slackbots');
 
 	// create a bot
@@ -22,9 +23,9 @@
 			if (message.user !== bot.id) {
 				var text = message.text.toLowerCase();
 				if (text.startsWith("gifme")) {
-					var gifnum = text.split(" ")[1];
-					if (parseInt(gifNum, 10)) {
-						bot.postMessageToChannel('catgifs', 'http://www.catgifpage.com/gifs/' + gifnum + '.gif');
+					var gifnum = parseInt(text.split(" ")[1]);
+					if (gifnum) {
+						bot.postMessageToChannel(message.channel, 'http://www.catgifpage.com/gifs/' + gifnum + '.gif');
 					}
 				}
 			}
