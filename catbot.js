@@ -1,4 +1,5 @@
 (function() {
+	"use strict";
 	var Bot = require('slackbots');
 
 	// create a bot
@@ -19,11 +20,11 @@
 
 	function onMessage(message) {
 		if (message.type == "message") {
-			if (message.user !== bot.id) {
+			if (message.user !== bot.id && message.text) {
 				var text = message.text.toLowerCase();
 				if (text.startsWith("gifme")) {
-					var gifnum = text.split(" ")[1];
-					if (parseInt(gifNum, 10)) {
+					var gifnum = parseInt(text.split(" ")[1], 10);
+					if (gifnum) {
 						bot.postMessageToChannel('catgifs', 'http://www.catgifpage.com/gifs/' + gifnum + '.gif');
 					}
 				}
