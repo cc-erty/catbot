@@ -3,7 +3,7 @@
 
 	// create a bot
 	var settings = {
-	    token: 'xoxb-45540609922-9R1rlvBkCoORbiyO2xlgz78f',
+	    token: require('./secret.js').secret,
 	    name: 'catbot'
 	};
 	var bot = new Bot(settings);
